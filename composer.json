@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "classmap": [
+      "app/Database.php",
+      "app/Configure.php",
+      "app/view",
+      "app/controllers/LoginController.php",
+      "app/model/User.php",
+      "app/model/User.php"
+    ]
+  }
+}
