@@ -6,7 +6,8 @@
  * Time: 13:26
  */
 
-final class Database {
+
+class Database {
 
     //for registration
     private $optionsPassword = [
@@ -17,24 +18,31 @@ final class Database {
 
     //info for connecting to DB
     //works php7.1 onwards
-    private  $__HOSTNAME = 'localhost';
-    private  $__USERNAME = 'root';
-    private  $__PASSWORD = '';
-    private  $__DATABASE = 'cms';
-    private  $__PORT     = "3306";
-    private $__OPTIONS  = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_PERSISTENT => false,
-        PDO::ATTR_EMULATE_PREPARES => false,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"];
+    /*
+    private const HOSTNAME = 'localhost';
+    private const __USERNAME = 'root';
+    private const __PASSWORD = '';
+    private const __DATABASE = 'cms';
+    private const __PORT     = "3306";
+    */
 
+    private $__HOSTNAME = 'localhost',
+            $__USERNAME = 'root',
+            $__PASSWORD = '',
+            $__DATABASE = 'cms',
+            $__PORT     = "3306",
+            $__OPTIONS  = [
+                            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                            PDO::ATTR_PERSISTENT => false,
+                            PDO::ATTR_EMULATE_PREPARES => false,
+                            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
+                          ];
 
-    //private $hash;
 
     /**
      * Database constructor.
-     * @param array $optionsPassword
+     * @param
      */
     public function __construct(){
         /**
@@ -52,21 +60,14 @@ final class Database {
     }
 
     public function selectUser($user){
-        $sql = $this->__CON -> prepare("SELECT * FROM user WHERE user=:user");
-        $sql -> execute(['user'=> $user]);
-        $user = $sql->fetch();
+        $smtp = $this->__CON -> prepare("SELECT * FROM user WHERE user=:user");
+        $smtp -> execute(['user'=> $user]);
+        $smtp->setFetchMode(PDO::FETCH_CLASS, 'User');
+        $user = $smtp->fetch();
         return $user;
     }
 
 
 
 
-}
-
-abstract class Model {
-    protected $_db;
-
-    public function __construct(Database $db) {
-        $this->_db = $db;
-    }
 }

@@ -7,14 +7,12 @@
  */
 
 
-
 define('SERVER_NAME',$_SERVER['SERVER_NAME']);
-
 
 
 class Configure {
 
-    private $page;
+    private $page = 'Login';
 
     /**
      * Controller constructor.
@@ -39,65 +37,57 @@ class Configure {
 
 
     public function __set($name,$value){
-        switch($name) { //this is kind of silly example, bt shows the idea
-            case 'ID':
-                return $this->setPage($value);
-        }
+        return $this->setPage($value);
     }
 
-    public function __get($name){
-        switch($name) {
-            case 'ID':
-                return $this->getPage();
-        }
+
+    public function __get($path){
+        return $this->getPage();
     }
 
+
+    //FOR LOGIN AND UNLOGIN USER
     private function sessionStatus(){
         if (session_status() == PHP_SESSION_ACTIVE) {
             echo 'Session is active';
-            $this->page = 'Player';
         }elseif(session_status() == PHP_SESSION_NONE){
-            echo 'Activate session';
+            echo 'Session start';
             session_start();
-            $this->page = 'Login';
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     public function loginController($username,$password){
         $login = new LoginController($username,$password);
         $login->selectUser();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    */
 
 
 

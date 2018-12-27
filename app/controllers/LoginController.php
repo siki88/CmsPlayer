@@ -6,58 +6,44 @@
  * Time: 12:22
  */
 
-class LoginController{
+class LoginController extends Controller {
 
-    private $username;
-    private $password;
+    public function index($id='', $name=''){
 
+        //call Controller->view
+        $this->view('login\index',[
+            'name' => $name,
+            'id' => $id
+        ]);
 
-    /**
-     * LoginController constructor.
-     */
-    public function __construct($username,$password){
-        $this->username = $username;
-        $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * @param mixed $username
-     */
-    private function setUsername($username): void
-    {
-        $this->username = $username;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    private function setPassword($password): void
-    {
-        $this->password = $password;
-    }
-
-    public function selectUser(){
-        $user = new Database();
-        $backUser =$user->selectUser($this->username);
-        var_dump($backUser);
+        echo('INDEX<pre>');
+        var_dump($this);
+//        var_dump($this->view_data['id']);
+        echo('</pre>');
 
     }
 
+
+
+
+
+
+
+
+
+
+    public function siki($id='', $name=''){
+
+        $this->view('login/index',[
+            'name' => $name,
+            'id' => $id
+        ]);
+
+        echo('SIKI<pre>');
+//        var_dump($this->view_data['name']);
+        var_dump($this);
+        echo('</pre>');
+
+    }
 
 }

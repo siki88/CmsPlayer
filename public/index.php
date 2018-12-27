@@ -1,19 +1,44 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: siki
- * Date: 18.12.2018
- * Time: 12:59
- */
+
+define('ROOT',dirname(__DIR__).DIRECTORY_SEPARATOR);
+define('CONTROLLER',ROOT.'app'.DIRECTORY_SEPARATOR.'controllers'.DIRECTORY_SEPARATOR);
+define('VIEW', ROOT.'app'.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR);
+//COMPOSER AUTOLOADER
+require_once "../vendor/autoload.php";
+
+
+
+
+
+
+
+
+new Application();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 define('IN_CMS',true);
 
 //include_once('../app/Configure.php');
 
-require_once "vendor/autoload.php";
+require_once "../app/view/Master.php";
 
-require_once "app/view/Master.php";
-
+*/
 
 
 

@@ -10,6 +10,7 @@
     </form>
 
     <?php
+    /*
     if(isset($_POST['username']) && isset($_POST['password'])){
 
     var_dump($_POST['username']);
@@ -18,5 +19,28 @@
         $config->loginController($_POST['username'],$_POST['password']);
 
     }
+    */
+
+
+    echo('<pre>');
+    //var_dump($_SERVER);
+    $dirname = dirname($_SERVER['SCRIPT_NAME']); //    /cms
+    $basename = basename($_SERVER['SCRIPT_NAME']); //  index.php
+    $request_uri = str_replace([$dirname,$basename],null,$_SERVER['REQUEST_URI']); //    /
+    //var_dump($_SERVER);
+    var_dump($dirname);
+    var_dump($basename);
+    var_dump($request_uri);
+
+    $test = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+    var_dump($test);
+
+
+    var_dump($_SERVER['REQUEST_URI']);
+    echo('</pre>');
+
+
+
+
     ?>
 
