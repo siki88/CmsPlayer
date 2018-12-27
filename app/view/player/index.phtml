@@ -53,30 +53,20 @@ include_once(VIEW . 'Header.phtml');
                 <th>Délky</th>
             </tr>
 
-            <tr onclick="window.location='/player'">
-                <td>01</td>
-                <td>Lucie Bílá</td>
-                <td>05:55</td>
-            </tr>
+            <?php
+            if(array($this->view_data) && !empty($this->view_data)){
+                foreach($this->view_data as $music ){
+                    echo "<tr onclick='window.location=\"player\"'/>";
+                    echo('<td>'.$music->id.'</td>');
+                    echo('<td>'.$music->name.'</td>');
+                    echo('<td>'.$music->longSong.'</td>');
+                    echo('</tr>');
+                }
+            }
+            ?>
 
-            <tr>
-                <td>02</td>
-                <td>Tiesto</td>
-                <td>15:00</td>
-            </tr>
-            <tr>
-                <td>03</td>
-                <td>Groowe armada</td>
-                <td>07:00</td>
-            </tr>
-            <tr>
-                <td>04</td>
-                <td>Prodigy</td>
-                <td>06:50</td>
-            </tr>
         </table>
     </div>
-
 
 
     <script  src="js/index.js"></script>

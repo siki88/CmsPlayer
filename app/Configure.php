@@ -7,6 +7,15 @@
  */
 
 
+
+
+/**
+ * NEPOUZIVANA STRANKA - POUZE NA POZNAMKY
+ */
+
+
+
+
 define('SERVER_NAME',$_SERVER['SERVER_NAME']);
 
     //for registration
@@ -64,45 +73,12 @@ class Configure {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     public function loginController($username,$password){
         $login = new LoginController($username,$password);
         $login->selectUser();
     }
     */
-
-
-
-
-
-
-
-
-
 
 
 
@@ -119,9 +95,6 @@ class Configure {
         }
     }
     */
-
-
-
 
 
 

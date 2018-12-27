@@ -9,13 +9,12 @@
 class PlayerController extends Controller {
 
 
-
     public function index($id='', $name=''){
         $this->model('music');
-        $this->view('player'.DIRECTORY_SEPARATOR.'index');
+        $this->view('player'.DIRECTORY_SEPARATOR.'index', $this->model->getMusic());
         //call render methods on view class
         $this->view->render();
-        var_dump($this->model->getMusic());
+
     }
 
     public function add($id='', $name=''){

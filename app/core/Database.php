@@ -7,7 +7,7 @@
  */
 
 
-class Database {
+final class Database {
 
     //info for connecting to DB
     //works php7.1 onwards
@@ -27,8 +27,8 @@ class Database {
             $__OPTIONS  = [
                             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                             PDO::ATTR_PERSISTENT => false,
-                            PDO::ATTR_EMULATE_PREPARES => false,
-                            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                          //  PDO::ATTR_EMULATE_PREPARES => false,
+                            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //PDO::FETCH_OBJ,
                             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"
                           ];
 
@@ -57,11 +57,11 @@ class Database {
     }
 
     private function loading($table){
-        $user = 'siki';
+        $user = 'user';
         $smtp = $this->__CON -> prepare("SELECT * FROM music");
         $smtp -> execute(['user'=> $user]);
-        //$smtp->setFetchMode(PDO::FETCH_CLASS, 'User');
-        $user = $smtp->fetch();
+        //$smtp->setFetchMode(PDO::FETCH_CLASS, 'Music');
+        $user = $smtp->fetchAll(PDO::FETCH_CLASS, "Music");
         return $user;
     }
 

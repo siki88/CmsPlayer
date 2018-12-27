@@ -7,8 +7,5 @@
  */
 
 class User {
-    public $id;
-    public $user;
-    public $password;
-    public $date;
+
 }

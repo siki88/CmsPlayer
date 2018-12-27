@@ -15,14 +15,15 @@ class Music{
      * Music constructor.
      */
     public function __construct(){
-        self::$data_file = DATA . 'music.txt';
+        //alternative data with file
+        //self::$data_file = DATA . 'music.txt';
     }
 
     private function load(){
         $database = new Database();
         $this->inventory = $database->getLoadingDB('music');
 
-
+        //alternative data with file
 //        if(file_exists(DATA . 'music.txt')){
 //            $this->inventory = file(DATA . 'music.txt');
 //        }
