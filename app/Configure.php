@@ -9,6 +9,12 @@
 
 define('SERVER_NAME',$_SERVER['SERVER_NAME']);
 
+    //for registration
+    private $optionsPassword = [
+        'memory_cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+        'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
+        'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
+    ];
 
 class Configure {
 

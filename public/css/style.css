@@ -327,3 +327,15 @@ nav ul li a{
   color: #428bca;
 }
 
+tr{
+  border: 1px solid #666666;
+}
+
+tr:hover{
+  background-color: #666666;
+}
+
+td, th{
+  padding: 5px;
+}
+

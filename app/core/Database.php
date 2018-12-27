@@ -9,13 +9,6 @@
 
 class Database {
 
-    //for registration
-    private $optionsPassword = [
-        'memory_cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-        'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
-        'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
-    ];
-
     //info for connecting to DB
     //works php7.1 onwards
     /*
@@ -59,15 +52,18 @@ class Database {
         }
     }
 
-    public function selectUser($user){
-        $smtp = $this->__CON -> prepare("SELECT * FROM user WHERE user=:user");
+    public function getLoadingDB($table){
+        return $this->loading($table);
+    }
+
+    private function loading($table){
+        $user = 'siki';
+        $smtp = $this->__CON -> prepare("SELECT * FROM music");
         $smtp -> execute(['user'=> $user]);
-        $smtp->setFetchMode(PDO::FETCH_CLASS, 'User');
+        //$smtp->setFetchMode(PDO::FETCH_CLASS, 'User');
         $user = $smtp->fetch();
         return $user;
     }
-
-
 
 
 }
