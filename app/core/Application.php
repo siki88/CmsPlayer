@@ -18,25 +18,6 @@ class Application{
     public function __construct(){
         $this->prepareURL();
 
-        //EXTRA
-/*
-        echo('<br><pre>');
-        var_dump($_SERVER['REQUEST_URI']);
-        var_dump($this->controller);
-        var_dump($this->action);
-        var_dump($this->params);
-        echo('</pre>');
-
-
-        echo('<p>$this->controller</p><pre>');
-        var_dump($this->controller);
-        echo('</pre>');
-
-        echo('<p>define controller</p><pre>');
-        var_dump(CONTROLLER.$this->controller.'.php');
-        echo('</pre>');
-*/
-
         if(file_exists(CONTROLLER. $this->controller.'.php')){
 
             //create instance *Controller

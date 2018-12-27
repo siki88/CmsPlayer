@@ -21,5 +21,15 @@ class View {
         $this->view_data = $view_data;
     }
 
+    public function render(){
+        if(file_exists(VIEW.$this->view_file.'.phtml')){
+            include_once(VIEW.$this->view_file.'.phtml');
+        }
+    }
+
+    public function getAction(){
+        return (explode('/',$this->view_file)[1]);
+    }
+
 
 }

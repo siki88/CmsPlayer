@@ -8,10 +8,14 @@
 
 class PlayerController extends Controller {
 
-    public function index(){
-        echo('<pre>');
-        var_dump($this);
-        echo('</pre>');
+    public function index($id='', $name=''){
+        //call Controller->view
+        $this->view('player/index',[
+            'name' => $name,
+            'id' => $id
+        ]);
+        //call render methods on view class
+        $this->view->render();
     }
 
 }

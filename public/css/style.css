@@ -300,3 +300,30 @@ i.previous-track-btn.disabled {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+nav{
+  background-color: white;
+  color: black;
+}
+
+nav ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav ul li{
+  display: inline-block;
+}
+
+nav ul li a{
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.active{
+  color: #428bca;
+}
+

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="cs" >
+
+<head>
+    <meta charset="UTF-8">
+    <title><?=isset($this->page_title) ? $this->page_title : 'cms'?></title>
+
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css" media="all">
+
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login" <?php // echo($this->getAction() == 'index' ? 'class=active' : '');?>>Login</a></li>
+        <li><a href="/player">PLAYER</a></li>
+        <li><a href="/registration">Registration</a></li>
+        <li><a href="/login/about">About</a></li>
+    </ul>
+</nav>
+
+
+<div class="container">
