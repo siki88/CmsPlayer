@@ -15,6 +15,7 @@ class ComposerStaticInitccaf23117b31474fe2661b02dd0f1140
         'LoginController' => __DIR__ . '/../..' . '/app/controllers/LoginController.php',
         'Music' => __DIR__ . '/../..' . '/app/model/Music.php',
         'PlayerController' => __DIR__ . '/../..' . '/app/controllers/PlayerController.php',
+        'RegistrationController' => __DIR__ . '/../..' . '/app/controllers/RegistrationController.php',
         'User' => __DIR__ . '/../..' . '/app/model/User.php',
         'View' => __DIR__ . '/../..' . '/app/core/View.php',
     );

@@ -14,6 +14,7 @@ return array(
     'LoginController' => $baseDir . '/app/controllers/LoginController.php',
     'Music' => $baseDir . '/app/model/Music.php',
     'PlayerController' => $baseDir . '/app/controllers/PlayerController.php',
+    'RegistrationController' => $baseDir . '/app/controllers/RegistrationController.php',
     'User' => $baseDir . '/app/model/User.php',
     'View' => $baseDir . '/app/core/View.php',
 );

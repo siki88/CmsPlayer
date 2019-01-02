@@ -1,0 +1,16 @@
+<?php
+include_once(VIEW . 'Header.phtml');
+?>
+
+<form action="registration/send" method="post" class="form-signin">
+        <h2 class="form-signin-heading">Registrace</h2>
+        <input type="text" class="form-control" name="username" placeholder="Uživatelské jméno" required="" autofocus="" />
+        <input type="password" class="form-control" name="password" placeholder="Heslo" required=""/>
+        <label class="checkbox">
+</label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Přihlásit</button>
+    </form>
+
+<?php
+include_once(VIEW . 'Footer.phtml');
+?>
