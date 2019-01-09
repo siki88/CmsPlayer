@@ -25,7 +25,7 @@ class Application{
 
             //send param to *Controller
             if(method_exists($this->controller,$this->action)){
-               call_user_func([$this->controller,$this->action], $this->params);
+                call_user_func([$this->controller,$this->action], $this->params);
             }
         }else{
             $this->controller = new ErrorController();

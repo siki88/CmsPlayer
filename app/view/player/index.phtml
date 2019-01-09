@@ -54,12 +54,16 @@ include_once(VIEW . 'Header.phtml');
             </tr>
 
             <?php
-            if(array($this->view_data) && !empty($this->view_data)){
-                foreach($this->view_data as $music ){
+            $file = new PlayerController();
+            $searchFile = $file->searchMusic();
+
+            if(array($searchFile) && !empty($searchFile) && count($searchFile) > 0){
+                foreach($searchFile as $key => $value ){
+                    $value = explode('/',$value);
                     echo "<tr onclick='window.location=\"player\"'/>";
-                    echo('<td>'.$music->id.'</td>');
-                    echo('<td>'.$music->name.'</td>');
-                    echo('<td>'.$music->longSong.'</td>');
+                    echo('<td>'.$key.'</td>');
+                    echo('<td>'.$value[1].'</td>');
+                    echo('<td>N/A</td>');
                     echo('</tr>');
                 }
             }

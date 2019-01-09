@@ -10,6 +10,7 @@ include_once(VIEW . 'Header.phtml');
             <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Uložit přihlášení
 </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Přihlásit</button>
+    <p><?=RegistrationController::$error?></p>
     </form>
 
 <?php
